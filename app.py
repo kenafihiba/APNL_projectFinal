@@ -435,7 +435,7 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown("**Dimension n**")
-    n_val = st.select_slider("", options=[10, 50, 100, 200, 500], value=50)
+    n_val = st.select_slider("", options=[50, 100, 500, 1000, 5000], value=50)
 
     st.markdown("**Problème test**")
     prob_choice = st.selectbox("", [
@@ -445,7 +445,7 @@ with st.sidebar:
     ])
 
     st.markdown("**Paramètres**")
-    max_iter = st.slider("Max itérations", 100, 2000, 500, 100)
+    max_iter = st.slider("Max itérations", 100, 200, 500, 1000, 2000)
     tol      = st.select_slider("Tolérance",
                                 options=[1e-4, 1e-5, 1e-6, 1e-7, 1e-8],
                                 value=1e-6,
@@ -454,8 +454,8 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("**Benchmark complet**")
     st.markdown("**Dimensions pour benchmark**")
-    bench_dims = st.multiselect("", [10, 50, 100, 200, 500],
-                                default=[50, 100])
+    bench_dims = st.multiselect("", [50, 100, 500, 1000, 5000],
+                                default=[50, 5000])
     run_bench = st.button("▶ Lancer le benchmark", type="primary",
                           use_container_width=True)
 
