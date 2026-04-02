@@ -445,7 +445,7 @@ with st.sidebar:
     ])
 
     st.markdown("**Paramètres**")
-    max_iter = st.slider("Max itérations", 100, 200, 500, 1000, 2000)
+    max_iter = st.slider("Max itérations", 100, 2000, 500, 100)
     tol      = st.select_slider("Tolérance",
                                 options=[1e-4, 1e-5, 1e-6, 1e-7, 1e-8],
                                 value=1e-6,
