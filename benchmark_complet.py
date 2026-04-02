@@ -454,11 +454,18 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("**Benchmark complet**")
     st.markdown("**Dimensions pour benchmark**")
-    bench_dims = st.multiselect("", [10, 50, 100, 200, 500],
-                                default=[50, 100])
-    run_bench = st.button("▶ Lancer le benchmark", type="primary",
-                          use_container_width=True)
 
+    bench_dims = st.multiselect(
+        "Choisir dimensions",
+        [10, 50, 100, 200, 500],
+        default=[50, 100]
+    )
+
+    run_bench = st.button(
+        "▶ Lancer le benchmark",
+        type="primary",
+        use_container_width=True
+    )
 
 # ══════════════════════════════════════════════════════════════════════════════
 # HEADER
