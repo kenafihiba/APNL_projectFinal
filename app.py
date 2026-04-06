@@ -268,7 +268,7 @@ def make_quadratic(n, kappa, seed=42):
     A=Q@np.diag(eigvals)@Q.T; A=(A+A.T)/2
     b=rng.standard_normal(n)
     x0=rng.standard_normal(n)
-    return {'name':f'Quadratic κ={int(kappa)}','f':lambda x:0.5*x@A@x+b@x,
+    return {'name':f'Quadratic κ={int(kappa)} n={n}','f':lambda x:0.5*x@A@x+b@x,
             'g':lambda x:A@x+b,'x0':x0,'cat':'quadratic','kappa':kappa}
 
 def make_rosenbrock(n):
@@ -454,8 +454,8 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("**Benchmark complet**")
     st.markdown("**Dimensions pour benchmark**")
-    bench_dims = st.multiselect("", [50, 100, 500, 1000, 5000],
-                                default=[50, 5000])
+    bench_dims = st.multiselect("", [50, 100, 500, 1000],
+                                default=[50])
     run_bench = st.button("▶ Lancer le benchmark", type="primary",
                           use_container_width=True)
 
@@ -519,7 +519,7 @@ tab1, tab2, tab3, tab4 = st.tabs([
 # ──────────────────────────────────────────────────────────────────────────────
 
 with tab1:
-    st.markdown(f'<p class="section-title">Problème : {prob["name"]}  —  n = {n_val}</p>',
+    st.markdown(f'<p class="section-title">Problème : {prob["name"]}</p>',
                 unsafe_allow_html=True)
 
     if st.button("▶ Lancer ce problème", type="primary"):
@@ -573,7 +573,7 @@ with tab1:
 
         # Courbe de convergence
         fig = plot_convergence(results,
-            title=f"Convergence — {st.session_state['single_prob']} (n={n_val})")
+            title=f"Convergence — {st.session_state['single_prob']}")
         st.pyplot(fig, use_container_width=True)
         plt.close()
 
