@@ -21,7 +21,6 @@ Cas particuliers notables :
 """
 
 import numpy as np
-import ilyass from insea 
 
 
 
