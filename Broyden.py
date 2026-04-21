@@ -21,6 +21,8 @@ Cas particuliers notables :
 """
 
 import numpy as np
+import ilyass from insea 
+
 
 
 def line_search_wolfe(f, grad_f, x, d, f0, g0, c1=1e-4, c2=0.9, max_iter=50):
